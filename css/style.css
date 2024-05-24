@@ -3,8 +3,12 @@ table, th, td {
 }
 
 * {
-	color: #93a1a1;
+	color: #839496;
 	background-color: #002b36;
+}
+
+p {
+	color: #93a1a1;
 }
 
 /*
