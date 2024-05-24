@@ -18,3 +18,7 @@ a:active {
 h1, h2, h3, h4, h5 {
 	color: #93a1a1;
 }
+
+p:last-child {
+	color: #586e75;
+}
