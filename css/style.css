@@ -6,3 +6,20 @@ table, th, td {
 	color: #93a1a1;
 	background-color: #002b36;
 }
+
+a:link {
+	color: #268bd2;
+}
+
+a:visited {
+	color: #6c71c4;
+}
+
+a:hover {
+	color: #2aa198;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #b58900;
+}
