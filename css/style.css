@@ -3,29 +3,6 @@ table, th, td {
 }
 
 * {
-	color: #839496;
+	color: #eee8d5;
 	background-color: #002b36;
 }
-
-p {
-	color: #93a1a1;
-}
-
-/*
-a:link {
-	color: #268bd2;
-}
-
-a:visited {
-	color: #6c71c4;
-}
-
-a:hover {
-	color: #2aa198;
-	text-decoration: underline;
-}
-
-a:active {
-	color: #b58900;
-}
-*/
