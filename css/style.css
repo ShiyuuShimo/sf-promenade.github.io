@@ -10,13 +10,11 @@ th.sort-desc::after {
 	content: 'v';
 }
 
+button {
+	margin: 0 0 1em 0.5em;
+}
+
 * {
 	color: #839496;
 	background-color: #002b36;
-}
-
-button {
-	border: #839496;
-	background-color: #586e75;
-	margin: 0 0 1em 0.5em;
 }
