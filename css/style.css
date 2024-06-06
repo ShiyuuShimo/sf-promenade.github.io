@@ -2,6 +2,18 @@ table, th, td {
 	border: 1px solid;
 }
 
+button {
+	margin: 0 0 1em 0.5em;
+}
+
+th.sort-asc::after {
+	content: '^';
+}
+
+th.sort-desc::after {
+	content: 'v';
+}
+
 * {
 	color: 	#839496;
 	background-color: #002b36;
