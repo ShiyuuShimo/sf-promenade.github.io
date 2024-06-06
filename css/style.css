@@ -2,10 +2,6 @@ table, th, td {
 	border: 1px solid;
 }
 
-button {
-	margin: 0 0 1em 0.5em;
-}
-
 th.sort-asc::after {
 	content: '^';
 }
@@ -15,6 +11,12 @@ th.sort-desc::after {
 }
 
 * {
-	color: 	#839496;
+	color: #839496;
 	background-color: #002b36;
+}
+
+button {
+	border: #839496;
+	background-color: #586e75;
+	margin: 0 0 1em 0.5em;
 }
