@@ -16,9 +16,9 @@
 			<p>1次元無限井戸型ポテンシャルにおけるSchrödinger方程式を解く．</p>
 			<p>\( V = \begin{cases} \infty & (x < 0, L < x) \\ 0 & (0 < x < L) \end{cases} \)</p>
 			<p>定常状態のSchrödinger方程式は以下の通り．</p>
-			<p>\( - \frac{{\hbar}^2}{2m} \frac{{\partial}^2}{{\partial}^2 x} \psi(x) = E \psi(x) \)</p>
+			<p>\( - \displaystyle \frac{{\hbar}^2}{2m} \frac{{\partial}^2}{{\partial}^2 x} \psi(x) = E \psi(x) \)</p>
 			<p>\( \psi(x) = e^{\alpha x} \)は定常状態のSchrödinger方程式の特解であり，係数比較して</p>
-			<p>\( - \frac{{\hbar}^2}{2m} \frac{{\partial}^2}{{\partial}^2 x} {\alpha}^2 = E \therefore \alpha = \pm \frac{i \sqrt{2mE}}{\hbar} \equiv \pm i \kappa \)</p>
+			<p>\( - \displaystyle \frac{{\hbar}^2}{2m} \frac{{\partial}^2}{{\partial}^2 x} {\alpha}^2 = E \therefore \alpha = \pm \frac{i \sqrt{2mE}}{\hbar} \equiv \pm i \kappa \)</p>
 			<p>定常状態のSchrödinger方程式の一般解は上記の特解の線型結合として得られて，</p>
 			<p>\( \begin{align} \psi(x) &= A e^{i \kappa} + B e^{-i \kappa} \\
 				&= A (\cos \kappa x + i \sin \kappa x ) + B (\cos \kappa x - i \sin \kappa x) \\
@@ -27,15 +27,15 @@
 			<p>\( \therefore \psi(x) = A \cos \kappa x + B \sin \kappa x \)</p>
 			<p>これが周期境界条件\( \psi(0) = \psi(L) = 0 \)を満足するので，</p>
 			<p>\( \begin{cases} A = 0 \\ B \sin \kappa L = 0 \end{cases} \)</p>
-			<p>\( \therefore \psi(x) = B \sin k_n x, k_n = \frac{n \pi}{L} \)</p>
+			<p>\( \displaystyle \therefore \psi(x) = B \sin k_n x, k_n = \frac{n \pi}{L} \)</p>
 			<p>ここで，\( n \)は0より大きな自然数．\( \because n = 0 \)のとき常に\( \psi(x) = 0 \)は自明．</p>
 			<p>規格化条件\( \int_{0}^{L} {| \psi(x) |}^2 dx = 1 \)より，</p>
 			<p>\( \begin{align} \int_{0}^{L} {| \psi(x) |}^2 dx &= \int_{0}^{L} B^2 \sin^2 k_n x dx \\
 				&= \int_{0}^{L} B^2 \frac{1 - \cos^2 k_n x}{2} dx = \frac{B^2 L}{2} = 1 \end{align} \)</p>
-			<p>\( \therefore B = \pm \sqrt{\frac{2}{L}} \)を得るが，\( - B = e^{i \pi} B \)より，波動関数の位相変化は物理的に無意味であるから，\( B = \sqrt{\frac{2}{L}} \)を選んでよい．</p>
+			<p>\( \displaystyle \therefore B = \pm \sqrt{\frac{2}{L}} \)を得るが，\( - B = e^{i \pi} B \)より，波動関数の位相変化は物理的に無意味であるから，\( \displaystyle B = \sqrt{\frac{2}{L}} \)を選んでよい．</p>
 			<p>定常状態のSchrödinger方程式に戻って，</p>
-			<p>\( E_n = \frac{ \hbar^2 {k_n}^2}{2m} = \frac{n^2 \pi^2 \hbar^2}{2m L^2} \)</p>
-			<p>\( \psi(x) = \sqrt{\frac{2}{L}} \sin k_n x = \sqrt{\frac{2}{L}} \sin \frac{n \pi}{L} x \)</p>
+			<p>\( \displaystyle E_n = \frac{ \hbar^2 {k_n}^2}{2m} = \frac{n^2 \pi^2 \hbar^2}{2m L^2} \)</p>
+			<p>\( \displaystyle \psi(x) = \sqrt{\frac{2}{L}} \sin k_n x = \sqrt{\frac{2}{L}} \sin \frac{n \pi}{L} x \)</p>
 			<p>このように，整数\( n = 1, 2, 3, \cdots \)でただ1つ定められる\( E_n \)をエネルギー固有値という．</p>
 			<p>また，\( n = 1 \)のときのエネルギー固有値を，その系における零点エネルギー，または零点振動エネルギーという．零点エネルギーは，井戸型ポテンシャルでは常に0より大きい．</p>
 			<hr>
