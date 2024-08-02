@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="homepage of sf-promnade">
+		<meta name="author" content="ShiyuuShimo">
+		<meta name="keyword" content="science fiction">
+		<base href="https://shiyuushimo.github.io/sf-promenade.github.io/">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/link.css">
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<title>Wheeler-Feynman吸収体理論 | SF游歩道</title>
+	</head>
+	<body>
+		<h1>Wheeler-Feynman吸収体理論</h1>
+			<p>Wheelerとその弟子Feynmanによる，古典電磁気学の範囲で時間対称性が破れていることを示すWheeler-Feynman吸収体理論（Wheeler-Feynman時間対称性理論）を紹介する．</p>
+			<h2>導入：Maxwell方程式</h2>
+				<p>電磁気学の支配法則であるMaxwell方程式は，以下の通り与えられる．</p>
+				<p>\( \begin{cases} \nabla \cdot \boldsymbol{E}(\boldsymbol{x}, t) = \displaystyle \frac{\rho (\boldsymbol{x}, t)}{\varepsilon_0} \\ \nabla \cdot \boldsymbol{B} (\boldsymbol{x}, t) = 0 \\ \nabla \times \boldsymbol{E}(\boldsymbol{x}, t) = - \displaystyle \frac{\partial \boldsymbol{B}(\boldsymbol{x}, t)}{\partial t} \\ \nabla \times \boldsymbol{B}(\boldsymbol{x}, t) = \mu_0 \boldsymbol{j}(\boldsymbol{x}, t) + \varepsilon_0 \mu_0 \displaystyle \frac{\partial \boldsymbol{E}(\boldsymbol{x}, t)}{\partial t} \end{cases} \)</p>
+				<p>上記の4式は，それぞれ電場に対するGauss則，磁場に対するGauss則，Faradayの電磁誘導則，Ampère-Maxwell則である．</p>
+				<p>ここで，ベクトルポテンシャル \( \boldsymbol{A} \)，スカラーポテンシャル \( \phi \) を次のように定義する．</p>
+				<p>\( \begin{cases} \boldsymbol{B}(\boldsymbol{x}, t) \equiv \nabla \times \boldsymbol{A}(\boldsymbol{x}, t) \\ \boldsymbol{E}(\boldsymbol{x}, t) + \displaystyle \frac{\partial \boldsymbol{A}(\boldsymbol{x}, t)}{\partial t} \equiv - \nabla \phi (\boldsymbol{x}, t) \end{cases} \)</p>
+				<p>スカラーポテンシャルとベクトルポテンシャル \( (\phi, \boldsymbol{A}) \) を合わせて電磁ポテンシャルという．Maxwell方程式は以下で定義するゲージ変換の下で不変である．</p>
+				<p>\( \begin{cases} \phi' (\boldsymbol{x}, t) \equiv \phi (\boldsymbol{x}, t) - \displaystyle \frac{u (\boldsymbol{x}, t)}{\partial t} \\ \boldsymbol{A}' (\boldsymbol{x}, t) \equiv \boldsymbol{A} (\boldsymbol{x}, t) + \nabla u(\boldsymbol{x}, t) \end{cases} \)</p>
+				<p>ゲージ変換の取り方は自由であり，ここではゲージとして以下で与えられるLorenzゲージを採用する．</p>
+				<p>\( \displaystyle \frac{1}{c^2} \frac{\partial \phi (\boldsymbol{x}, t)}{\partial t} + \nabla \cdot \boldsymbol{A}(\boldsymbol{x}, t) = 0 \)</p>
+				<p>Lorenzゲージの下，電磁ポテンシャルを用いてMaxwell方程式を書き換えたい．電磁ポテンシャルの定義より，電磁ポテンシャルは存在すれば電磁誘導則と磁場に対するGauss則を自動的に満たすので，電場に対するGauss則とAmpère-Maxwell則だけを考えれば良い．</p>
+				<p>d'Alembert演算子 \( \Box \equiv \Delta - \displaystyle \frac{1}{c^2} \frac{{\partial}^2}{\partial t^2} \) を用いれば，それぞれ</p>
+				<p>\( \begin{cases} \Box \phi (\boldsymbol{x}, t) = - \displaystyle \frac{\rho (\boldsymbol{x}, t)}{\varepsilon_0} \\ \Box \boldsymbol{A}(\boldsymbol{x}, t) = - \mu_0 \boldsymbol{j} (\boldsymbol{x}, t) \end{cases} \)</p>
+				<p>と表される．これらの方程式を電磁ポテンシャルに対するd'Alembert方程式，または単に波動方程式という．</p>
+				<p>このようにして，Maxwell方程式は，電磁ポテンシャルの定義式と，Lorenzゲージの下で電磁ポテンシャルに対するd'Alembert方程式とに還元される．</p>
+			<h2>d'Alembert方程式の解</h2>
+				<p>十分狭い領域に偏在する電荷や電流密度によって生じる，無限に広い領域の電磁場の振る舞いを知ることは，先述のd'Alembert方程式の特解を求めることに帰着される．ここで，Green関数</p>
+				<p>\( \Box G (\boldsymbol{r}, \boldsymbol{x}, t, t') \equiv - \delta(\boldsymbol{r} - \boldsymbol{x}) \delta (\boldsymbol{t} - \boldsymbol{t'}) \)</p>
+				<p>を求めれば，求めたいd'Lembert方程式の特解である電磁ポテンシャルは以下のように構成される．</p>
+				<p>\( \begin{pmatrix} \phi (\boldsymbol{r}, t) \\ \boldsymbol{A} (\boldsymbol{r}, t) \end{pmatrix} = \displaystyle \int dt' \iiint dV \begin{pmatrix} \displaystyle \frac{1}{\varepsilon_0} \rho (\boldsymbol{x}, t') \\ \mu_0 \boldsymbol{j} (\boldsymbol{x}, t') \end{pmatrix} G (\boldsymbol{r}, \boldsymbol{x}, t, t') \)</p>
+
+				<h3></h3>
+					<p></p>
+			<hr>
+				<p><a href="notes/index.html">ノート一覧に戻る</a></p>
+				<p><a href="https://shiyuushimo.github.io/sf-promenade.github.io/">トップに戻る</a></p>
+		<footer>
+			<p>
+				<small>Written by ShiyuuShimo</small>
+			</p>
+		</footer>
+	</body>
+</html>
