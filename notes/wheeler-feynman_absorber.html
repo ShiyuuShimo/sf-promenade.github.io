@@ -14,6 +14,7 @@
 	<body>
 		<h1>Wheeler-Feynman吸収体理論</h1>
 			<p>Wheelerとその弟子Feynmanによる，古典電磁気学の範囲で時間対称性が破れていることを示すWheeler-Feynman吸収体理論（Wheeler-Feynman時間対称性理論）を紹介する．</p>
+
 			<h2>導入：Maxwell方程式</h2>
 				<p>電磁気学の支配法則であるMaxwell方程式は，以下の通り与えられる．</p>
 				<p>\( \begin{cases} \nabla \cdot \boldsymbol{E}(\boldsymbol{x}, t) = \displaystyle \frac{\rho (\boldsymbol{x}, t)}{\varepsilon_0} \\ \nabla \cdot \boldsymbol{B} (\boldsymbol{x}, t) = 0 \\ \nabla \times \boldsymbol{E}(\boldsymbol{x}, t) = - \displaystyle \frac{\partial \boldsymbol{B}(\boldsymbol{x}, t)}{\partial t} \\ \nabla \times \boldsymbol{B}(\boldsymbol{x}, t) = \mu_0 \boldsymbol{j}(\boldsymbol{x}, t) + \varepsilon_0 \mu_0 \displaystyle \frac{\partial \boldsymbol{E}(\boldsymbol{x}, t)}{\partial t} \end{cases} \)</p>
@@ -29,14 +30,45 @@
 				<p>\( \begin{cases} \Box \phi (\boldsymbol{x}, t) = - \displaystyle \frac{\rho (\boldsymbol{x}, t)}{\varepsilon_0} \\ \Box \boldsymbol{A}(\boldsymbol{x}, t) = - \mu_0 \boldsymbol{j} (\boldsymbol{x}, t) \end{cases} \)</p>
 				<p>と表される．これらの方程式を電磁ポテンシャルに対するd'Alembert方程式，または単に波動方程式という．</p>
 				<p>このようにして，Maxwell方程式は，電磁ポテンシャルの定義式と，Lorenzゲージの下で電磁ポテンシャルに対するd'Alembert方程式とに還元される．</p>
+
 			<h2>d'Alembert方程式の解</h2>
 				<p>十分狭い領域に偏在する電荷や電流密度によって生じる，無限に広い領域の電磁場の振る舞いを知ることは，先述のd'Alembert方程式の特解を求めることに帰着される．ここで，Green関数</p>
 				<p>\( \Box G (\boldsymbol{r}, \boldsymbol{x}, t, t') \equiv - \delta(\boldsymbol{r} - \boldsymbol{x}) \delta (\boldsymbol{t} - \boldsymbol{t'}) \)</p>
-				<p>を求めれば，求めたいd'Lembert方程式の特解である電磁ポテンシャルは以下のように構成される．</p>
+				<p>を求めれば，求めたいd'Alembert方程式の特解である電磁ポテンシャルは以下のように構成される．</p>
 				<p>\( \begin{pmatrix} \phi (\boldsymbol{r}, t) \\ \boldsymbol{A} (\boldsymbol{r}, t) \end{pmatrix} = \displaystyle \int dt' \iiint dV \begin{pmatrix} \displaystyle \frac{1}{\varepsilon_0} \rho (\boldsymbol{x}, t') \\ \mu_0 \boldsymbol{j} (\boldsymbol{x}, t') \end{pmatrix} G (\boldsymbol{r}, \boldsymbol{x}, t, t') \)</p>
+				<p>以下， \( \boldsymbol{r} - \boldsymbol{x} \mapsto \boldsymbol{x}, t - t' \mapsto t \) なる変数変換を行う．Green関数のtに関するFourier変換 \( \widetilde{G} \) を考えると，</p>
+				<p>\( \widetilde{G} (\boldsymbol{x}, \omega) = \displaystyle \frac{1}{2 \pi} \int_{- \infty}^{\infty} G (\boldsymbol{x}, t') e^{i \omega t'} dt' \)</p>
+				<p>また，デルタ関数のFourier変換は以下のように表せる.</p>
+				<p>\( \delta (t) = \displaystyle \frac{1}{2 \pi} \int_{- \infty}^{\infty} e^{-i \omega t} d \omega \)</p>
+				<p>したがって，変数変換後のGreen関数は，</p>
+				<p>\( \begin{align} \bigg( \Delta - \displaystyle \frac{1}{c^2} \frac{{\partial}^2}{\partial t^2} \bigg) \int_{- \infty}^{\infty} \widetilde{G} (\boldsymbol{x}, \omega) e^{-i \omega t} d \omega &= - \delta (\boldsymbol{x}) \frac{1}{2 \pi} \int_{- \infty}^{\infty} e^{- i \omega t} d \omega \\ \int_{- \infty}^{\infty} \bigg( \Delta + \displaystyle \frac{{\omega}^2}{c^2} \bigg) \widetilde{G} (\boldsymbol{x}, \omega) e^{-i \omega t} d \omega &= \int_{- \infty}^{\infty} \frac{- \delta (\boldsymbol{x})}{2 \pi} e^{-i \omega t} d \omega \\ \bigg( \delta + \displaystyle \frac{{\omega}^2}{c^2} \bigg) \widetilde{G} (\boldsymbol{x}, \omega) &= \frac{- \delta (\boldsymbol{x})}{2 \pi} \end{align} \)</p>
+				<p>これは非斉次のHelmholtz方程式である．Poisson方程式のGreen関数が \( \displaystyle \frac{1}{4 \pi r} \) であることと，デルタ関数の定義を用いれば，Helmholtz方程式の解は，</p>
+				<p>\( \widetilde{G} (\boldsymbol{x}, \omega) = \displaystyle \frac{1}{2 \pi} \frac{e^{\pm i \frac{\omega}{c} |\boldsymbol{x}|}}{4 \pi |\boldsymbol{x}|} \)</p>
+				<p>これを再度Fourier変換すれば，d'Lembert方程式のGreen関数が得られる，</p>
+				<p>\( \begin{align} G (\boldsymbol{x}, t) &= \int \displaystyle \frac{1}{2 \pi} \frac{e^{\pm i \frac{\omega}{c} |\boldsymbol{x}|}}{4 \pi |\boldsymbol{x}|} e^{-i \omega t} d \omega \\ &= \displaystyle \frac{1}{4 \pi |\boldsymbol{x}|} \delta (t \mp \frac{|\boldsymbol{x}|}{c}) \end{align} \)</p>
+				<p>これを用いてd'Alembert方程式の特解が求められる．なお，再度変数変換して元の変数に戻した．</p>
+				<p>\( \begin{cases} \phi (\boldsymbol{r}, t) = \displaystyle \frac{1}{4 \pi \epsilon_0} \iiint \frac{\rho (\boldsymbol{x}, t \mp \frac{|\boldsymbol{r} - \boldsymbol{x}|}{c})}{|\boldsymbol{r} - \boldsymbol{x}|} dV \\ \boldsymbol{A} (\boldsymbol{r}, t) = \displaystyle \frac{\mu_0}{4 \pi} \iiint \frac{\boldsymbol{j} (\boldsymbol{x}, t \mp \frac{|\boldsymbol{r} - \boldsymbol{x}|}{c})}{|\boldsymbol{r} - \boldsymbol{x}|} dV \end{cases} \)</p>
+				<p>これらのd'Alembert方程式の特解となるポテンシャルのうち，複号で負をとったものを遅延ポテンシャル，正をとったものを先進ポテンシャルという．</p>
 
-				<h3></h3>
-					<p></p>
+			<h2>遅延ポテンシャル・先進ポテンシャルの吟味</h2>
+				<p>遅延ポテンシャル・先進ポテンシャルは，ともに数学的に正しいd'Alembert方程式の特解であるが，物理学的に正しい解であるかはまだわからない．そこで，遅延ポテンシャル・先進ポテンシャルを物理学的に解釈し，解として相応しいか吟味する，</p>
+
+			<h2>Wheeler-Feynman吸収体理論</h2>
+
+			<h2>Wheeler-Feynman吸収体理論の計算</h2>
+
+			<h2>参考文献</h2>
+				<p>[1] John A. Wheeler, Richard P. Feynman, Interaction with the absorber as mechanism of radiation, <i>Review of modern physics</i>, <b>17</b>(2-3), 157-181, 1945</p>
+				<p>[2] John A. Wheeler, Richard P. Feynman, Classical electrodynamics in terms of direct interparticle action, <i>Review of modern physics</i>, <b>21</b>(3), 425-433, 1949</p>
+				<p>[3] Fred Hoyle, Jayant V. Narlikar, Cosmology and action-at-a-distance electrodynamics, <i>Reviews of modern physics</i>, <b>67</b>(1), 113-155, 1995</p>
+				<p>[4] Lawrenxe S. Schulman, Formulation and justification of the Wheeler-Feynman absorber theory, <i>Foundations of physics</i>, (10), 841-853, 1980</p>
+				<p>[5] Hugo Tetrode, Über den Wirkungszusammenhang der Welt. Eine Erweiterung der klassischen Dynamik, <i>Zeitschrift für Physik</i>, (10), 317-328, 1922</p>
+				<p>[6] Paul A. M. Dirac, Classical theory of radiating electrons, <i>Proceedings of the royal society of London</i>, <b>167</b>(929), 1938</p>
+				<p>[7] Richard P. Feynman, The Feynman lecture on physics, vol. Ⅱ, <a href="https://www.feynmanlectures.caltech.edu">https://www.feynmanlectures.caltech.edu</a></p>
+				<p>[8] ローリー・ブラウン, ファインマン経路積分の発見, 岩波書店, 2016</p>
+				<p>[9] 砂川重信, 理論電磁気学 第3版, 紀伊国屋書店, 1999</p>
+				<p>[10] 中村哲, 須藤彰三, 電磁気学, 朝倉書店, 2010</p>
+
 			<hr>
 				<p><a href="notes/index.html">ノート一覧に戻る</a></p>
 				<p><a href="https://shiyuushimo.github.io/sf-promenade.github.io/">トップに戻る</a></p>
