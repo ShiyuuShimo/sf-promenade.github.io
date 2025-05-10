@@ -1,5 +1,3 @@
-initialize();
-
 const initialize = () => {
     const table = document.querySelector('table');
     const tableParent = table.parentElement;
@@ -100,3 +98,5 @@ const compareKeysReverse = (a, b) => {
         return 0;
     };
 };
+
+initialize();
