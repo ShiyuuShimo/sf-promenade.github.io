@@ -15,10 +15,9 @@ button {
 }
 
 hr {
-	height: 3px;
-	background-color: #839496;
 	border: none;
 	color: #839496;
+	background-color: #002b36;
 }
 
 * {
